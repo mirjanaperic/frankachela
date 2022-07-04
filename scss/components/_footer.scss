@@ -1,0 +1,16 @@
+.footer {
+    width: 100%;
+    background-color: $main-color;
+}
+
+.footer__inner {
+    display: flex;
+    @media only screen and (max-width: 767px) {
+        flex-direction: column;   
+        align-items: center;
+    }
+}
+
+.footer__text {
+    color: $secondary-color;
+}
