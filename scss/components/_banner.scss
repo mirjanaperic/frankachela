@@ -1,13 +1,45 @@
 .banner {
+    position: relative;
     width: 100%;
+    // background-image: url('../../images/banner.svg');
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    // background-position: center center;
+    background-color: $secondary-color;
+    min-height: 100vh;
+    .wrap {
+        position: relative;
+    }
+}
+
+.banner__inner {
+    padding: 100px 0;
+    // position: fixed;
+    // left: 50%;
+    // top: 200px;
+    // transform: translate(-50%, -50%);
+}
+
+.banner__img {
+    margin: 0 auto;
+    width: 100%;
+    position: absolute;
+    top: -100px;
+    left: 0;
+    object-fit: contain;
+    // margin-top: -100px;
 }
 
 .banner__subtitle {
     display: block;
     text-align: center;
     text-transform: uppercase;
+    font-size: 21px;
+    line-height: 29px;
 }
 
 .banner__title {
     text-align: center;
+    font-family: $font-secondary;
+    font-size: 90px;
 }

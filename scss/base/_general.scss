@@ -8,7 +8,7 @@ body {
 	font-family: $font-default;
 	font-size: 14px;
 	font-weight: 400;
-	// color: $black;
+	color: $main-color;
 }
 
 img {
@@ -25,12 +25,16 @@ img {
 
 .wrap {
 	margin: 0 auto;
-	max-width: 1550px;
-	// padding: 0 20px;
+	max-width: 1540px;
+	padding: 0 20px;
 	width: 100%;
 	// @include media-breakpoint-down(sm) {
 	// 	padding: 15px;
 	// }
+}
+
+.wrap--wide {
+	max-width: 1880px;
 }
 
 [data-object-fit='cover'] {

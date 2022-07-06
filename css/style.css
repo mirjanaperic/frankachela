@@ -1,26 +1,19 @@
 @font-face {
   font-family: 'AktivGrotesk';
-  src: url("AktivGrotesk-Light.woff2") format("woff2"), url("AktivGrotesk-Light.woff") format("woff");
+  src: url("../../fonts/AktivGrotesk-Medium.woff2") format("woff2"), url("AktivGrotesk-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: swap; }
 @font-face {
-  font-family: 'AktivGrotesk';
-  src: url("AktivGrotesk-Medium.woff2") format("woff2"), url("AktivGrotesk-Medium.woff") format("woff");
+  font-family: 'AktivGroteskLight';
+  src: url("../../fonts/AktivGrotesk-Light.woff2") format("woff2"), url("../../fonts/AktivGrotesk-Light.woff") format("woff");
   font-weight: 500;
-  font-style: normal;
-  font-display: swap; }
-@font-face {
-  font-family: 'Sora';
-  src: url("Sora-Regular.woff2") format("woff2"), url("Sora-Regular.woff") format("woff");
-  font-weight: normal;
   font-style: normal;
   font-display: swap; }
 @font-face {
   font-family: 'Blacker Pro Dis Md';
-  src: url("BlackerProDis-MdIt.woff2") format("woff2"), url("BlackerProDis-MdIt.woff") format("woff");
+  src: url("../../fonts/BlackerText-Re.woff2") format("woff2"), url("../../fonts/BlackerText-Bold.woff") format("woff");
   font-weight: 500;
-  font-style: italic;
   font-display: swap; }
 *:focus {
   outline: none; }
@@ -33,9 +26,10 @@
   box-sizing: border-box; }
 
 body {
-  font-family: "Playfair Display", serif;
+  font-family: "AktivGroteskLight";
   font-size: 14px;
-  font-weight: 400; }
+  font-weight: 400;
+  color: #000; }
 
 img {
   max-width: 100%;
@@ -49,8 +43,12 @@ img {
 
 .wrap {
   margin: 0 auto;
-  max-width: 1550px;
+  max-width: 1540px;
+  padding: 0 20px;
   width: 100%; }
+
+.wrap--wide {
+  max-width: 1880px; }
 
 [data-object-fit='cover'] {
   object-fit: cover; }
@@ -287,15 +285,40 @@ td {
   vertical-align: top; }
 
 .banner {
-  width: 100%; }
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  min-height: 100vh; }
+  .banner .wrap {
+    position: relative; }
+
+.banner__inner {
+  padding: 100px 0; }
+
+.banner__img {
+  margin: 0 auto;
+  width: 100%;
+  position: absolute;
+  top: -100px;
+  left: 0;
+  object-fit: contain; }
 
 .banner__subtitle {
   display: block;
   text-align: center;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  font-size: 21px;
+  line-height: 29px; }
 
 .banner__title {
-  text-align: center; }
+  text-align: center;
+  font-family: "Blacker Pro Dis Md";
+  font-size: 90px; }
+
+.about {
+  position: relative;
+  width: 100%;
+  margin: 100px 0; }
 
 .about__text {
   font-size: 60px; }
@@ -303,17 +326,34 @@ td {
 .about__flex {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; }
+  justify-content: space-between;
+  padding: 0 40px; }
   @media only screen and (max-width: 767px) {
     .about__flex {
       flex-direction: column;
       width: 100%; } }
 
+.about__title {
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 80px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto; }
+
 .about__subtitle {
-  font-size: 32px; }
+  font-size: 32px;
+  line-height: 40px;
+  max-width: 65%;
+  margin-bottom: 40px; }
 
 .about__text {
-  font-size: 20px; }
+  font-size: 20px;
+  line-height: 34px; }
+
+.about__img {
+  display: block;
+  margin: 60px auto; }
 
 @media only screen and (max-width: 767px) {
   .about__flex-part:nth-child(1) {
@@ -324,7 +364,7 @@ td {
     order: 3; } }
 
 .about__flex-part--half {
-  flex-basis: 50%; }
+  flex-basis: 40%; }
   @media only screen and (max-width: 767px) {
     .about__flex-part--half {
       flex-basis: 100%; } }
@@ -332,18 +372,91 @@ td {
 .about__flex-part--full {
   flex-basis: 100%; }
 
+.services {
+  width: 100%;
+  position: relative;
+  margin: 100px 0;
+  text-align: center;
+  overflow: hidden; }
+
+.services__title {
+  font-size: 60px;
+  line-height: 80px;
+  margin-bottom: 40px; }
+
+.services__text {
+  font-size: 20px;
+  line-height: 34px;
+  margin: 0 auto 40px;
+  max-width: 930px; }
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.card {
+  border-radius: 5px;
+  max-width: 370px;
+  flex: 0 0 370px;
+  height: 587px;
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px; }
+  .card:first-of-type {
+    background-color: #E9E9E9; }
+  .card:nth-of-type(2) {
+    background-color: #B3BB68; }
+  .card:nth-of-type(3) {
+    background-color: #E8C14F; }
+  .card:last-of-type {
+    background-color: #F1824C;
+    margin-right: 0; }
+
+.card__title {
+  font-size: 48px;
+  line-height: 64px;
+  margin-bottom: 40px; }
+
+.card__img {
+  height: 147px;
+  max-width: 204px;
+  object-fit: contain;
+  margin-bottom: 40px; }
+
+.card__text {
+  font-size: 25px;
+  line-height: 34px; }
+
 .footer {
   width: 100%;
+  position: relative;
   background-color: #000; }
 
 .footer__inner {
-  display: flex; }
+  padding: 50px 0;
+  display: flex;
+  align-items: center; }
   @media only screen and (max-width: 767px) {
     .footer__inner {
       flex-direction: column;
       align-items: center; } }
 
 .footer__text {
-  color: #fff; }
+  color: #fff;
+  display: block; }
+  @media only screen and (min-width: 768px) {
+    .footer__text {
+      margin-right: 40px; }
+      .footer__text:last-child {
+        margin-right: 0; } }
+  @media only screen and (max-width: 767px) {
+    .footer__text {
+      margin-right: 0; } }
+
+.footer__text--logo {
+  font-size: 30px; }
 
 /*# sourceMappingURL=style.css.map */
