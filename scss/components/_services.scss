@@ -10,6 +10,8 @@
     font-size: 60px;
     line-height: 80px;
     margin-bottom: 40px;
+    font-family: $font-secondary-italic;
+    font-weight: $thin;
 }
 
 .services__text {
@@ -55,6 +57,7 @@
     font-size: 48px;
     line-height: 64px;
     margin-bottom: 40px;
+    font-family: $font-secondary-italic;
 }
 
 .card__img {
@@ -67,4 +70,5 @@
 .card__text {
     font-size: 25px;
     line-height: 34px;
+    font-family: $font-default-light;
 }

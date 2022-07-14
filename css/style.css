@@ -1,19 +1,32 @@
 @font-face {
-  font-family: 'AktivGrotesk';
-  src: url("../../fonts/AktivGrotesk-Medium.woff2") format("woff2"), url("AktivGrotesk-Light.woff") format("woff");
+  font-family: 'AktivGroteskLight';
+  src: url("../../fonts/AktivGrotesk-Light.woff2") format("woff2"), url("../../fonts/AktivGrotesk-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: swap; }
 @font-face {
-  font-family: 'AktivGroteskLight';
-  src: url("../../fonts/AktivGrotesk-Light.woff2") format("woff2"), url("../../fonts/AktivGrotesk-Light.woff") format("woff");
+  font-family: 'AktivGrotesk';
+  src: url("../../fonts/AktivGrotesk-Medium.woff2") format("woff2"), url("../../fonts/AktivGrotesk-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap; }
 @font-face {
   font-family: 'Blacker Pro Dis Md';
-  src: url("../../fonts/BlackerText-Re.woff2") format("woff2"), url("../../fonts/BlackerText-Bold.woff") format("woff");
+  src: url("../../fonts/BlackerProDis-MdIt.woff2") format("woff2"), url("../../fonts/BlackerProDis-MdIt.woff") format("woff");
   font-weight: 500;
+  font-style: italic;
+  font-display: swap; }
+@font-face {
+  font-family: 'Blacker Text';
+  src: url("../../fonts/BlackerText-Medium.woff2") format("woff2"), url("../../fonts/BlackerText-Medium.woff") format("woff"), url("../../fonts/BlackerText-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; }
+@font-face {
+  font-family: 'Sora';
+  src: url("../../fonts/Sora-Regular.woff2") format("woff2"), url("../../fonts/Sora-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
   font-display: swap; }
 *:focus {
   outline: none; }
@@ -26,7 +39,7 @@
   box-sizing: border-box; }
 
 body {
-  font-family: "AktivGroteskLight";
+  font-family: "AktivGrotesk";
   font-size: 14px;
   font-weight: 400;
   color: #000; }
@@ -308,11 +321,13 @@ td {
   text-align: center;
   text-transform: uppercase;
   font-size: 21px;
-  line-height: 29px; }
+  line-height: 29px;
+  letter-spacing: 3px;
+  font-family: "Sora"; }
 
 .banner__title {
   text-align: center;
-  font-family: "Blacker Pro Dis Md";
+  font-family: "Blacker Text";
   font-size: 90px; }
 
 .about {
@@ -334,17 +349,18 @@ td {
       width: 100%; } }
 
 .about__title {
-  font-size: 60px;
-  font-weight: 400;
+  font-size: clamp(2rem, 5vw, 4.3rem);
+  font-family: "Blacker Pro Dis Md";
+  font-weight: 500;
   line-height: 80px;
   text-align: center;
-  max-width: 1200px;
+  max-width: 1350px;
   margin: 0 auto; }
 
 .about__subtitle {
   font-size: 32px;
   line-height: 40px;
-  max-width: 65%;
+  max-width: 75%;
   margin-bottom: 40px; }
 
 .about__text {
@@ -372,6 +388,121 @@ td {
 .about__flex-part--full {
   flex-basis: 100%; }
 
+.contact {
+  width: 100%;
+  position: relative; }
+
+.contact__inner {
+  margin-bottom: 140px; }
+
+.contact__text-img {
+  display: flex;
+  justify-content: space-between; }
+
+.contact__title {
+  font-size: clamp(2rem, 2.8vw, 4.3rem);
+  font-family: "Blacker Pro Dis Md";
+  font-weight: 500;
+  margin-bottom: 2.8rem; }
+
+.contact__text {
+  font-size: clamp(0.8rem, 1vw, 1.4rem); }
+
+.contact__text-wrap {
+  max-width: 47%;
+  flex: 0 0 47%; }
+
+.contact__img {
+  max-width: 47%;
+  flex: 0 0 47%; }
+
+.arrow {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  position: relative; }
+  .arrow::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    left: 50%;
+    border-style: solid;
+    border-color: #000;
+    border-width: 2px 2px 0 0;
+    position: absolute;
+    transform-origin: 50% 50%; }
+  .arrow.right::before {
+    transform: rotate(45deg);
+    margin: -15px 0 0 -20px; }
+  .arrow::after {
+    content: '';
+    display: block;
+    top: 50%;
+    left: 50%;
+    border-style: solid;
+    border-color: #000;
+    position: absolute;
+    transform-origin: 50% 50%; }
+  .arrow.right::after {
+    width: 40px;
+    height: 0;
+    border-width: 2px 0 0 0;
+    transform: translate(-26px, -1px); }
+
+.form {
+  width: 100%; }
+
+.form__inner {
+  display: flex;
+  justify-content: space-between; }
+
+.form__part {
+  max-width: 48%;
+  flex: 0 0 48%; }
+
+.form__label {
+  display: block;
+  font-size: clamp(0.43rem, 2.2vw, 1.2rem);
+  margin-bottom: 25px; }
+
+.form__input {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid #000;
+  width: 100%;
+  padding-bottom: 20px;
+  margin-bottom: 50px; }
+
+.form__textarea {
+  width: 100%;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid #000;
+  padding-bottom: 25px; }
+
+::placeholder {
+  font-family: "AktivGroteskLight";
+  font-size: clamp(0.43rem, 2.2vw, 1.2rem); }
+
+.form__btn-wrap {
+  display: flex;
+  justify-content: flex-end; }
+
+.form__btn {
+  font-family: "Blacker Pro Dis Md";
+  font-size: clamp(3.4rem, 3.3vw, 1rem);
+  background-color: transparent;
+  border: 0;
+  color: #000;
+  display: flex;
+  padding: 10px; }
+  .form__btn:focus {
+    border: 1px solid #000; }
+
 .services {
   width: 100%;
   position: relative;
@@ -382,7 +513,9 @@ td {
 .services__title {
   font-size: 60px;
   line-height: 80px;
-  margin-bottom: 40px; }
+  margin-bottom: 40px;
+  font-family: "Blacker Pro Dis Md";
+  font-weight: 300; }
 
 .services__text {
   font-size: 20px;
@@ -418,7 +551,8 @@ td {
 .card__title {
   font-size: 48px;
   line-height: 64px;
-  margin-bottom: 40px; }
+  margin-bottom: 40px;
+  font-family: "Blacker Pro Dis Md"; }
 
 .card__img {
   height: 147px;
@@ -428,8 +562,51 @@ td {
 
 .card__text {
   font-size: 25px;
-  line-height: 34px; }
+  line-height: 34px;
+  font-family: "AktivGroteskLight"; }
 
+.clients {
+  width: 100%;
+  position: relative;
+  overflow: hidden; }
+
+.clients__inner {
+  padding: 180px 0; }
+
+.clients__text-wrap {
+  display: flex;
+  margin-bottom: 160px; }
+
+.clients__title {
+  font-size: 30px;
+  margin-right: 100px;
+  flex: 0 0 15%; }
+
+.clients__text {
+  flex: 0 0 60%;
+  font-size: 18px; }
+
+.clients__images {
+  display: flex;
+  align-items: center;
+  animation: chyron 10s infinite linear; }
+  .clients__images:hover {
+    animation-play-state: paused; }
+
+.clients__img-wrap {
+  flex: 0 0 150px;
+  max-width: 150px;
+  margin-right: 90px; }
+
+.clients__img {
+  max-width: 100%;
+  height: auto; }
+
+@keyframes chyron {
+  from {
+    transform: translateX(150%); }
+  to {
+    transform: translateX(-150%); } }
 .footer {
   width: 100%;
   position: relative;
