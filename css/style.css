@@ -328,7 +328,11 @@ td {
 .banner__title {
   text-align: center;
   font-family: "Blacker Text";
-  font-size: 90px; }
+  font-size: 90px;
+  position: fixed;
+  top: 210px;
+  left: 50%;
+  transform: translate(-50%, -50%); }
 
 .about {
   position: relative;
@@ -352,7 +356,7 @@ td {
   font-size: clamp(2rem, 5vw, 4.3rem);
   font-family: "Blacker Pro Dis Md";
   font-weight: 500;
-  line-height: 80px;
+  line-height: 1.2;
   text-align: center;
   max-width: 1350px;
   margin: 0 auto; }
@@ -589,9 +593,7 @@ td {
 .clients__images {
   display: flex;
   align-items: center;
-  animation: chyron 10s infinite linear; }
-  .clients__images:hover {
-    animation-play-state: paused; }
+  width: 100%; }
 
 .clients__img-wrap {
   flex: 0 0 150px;
@@ -602,11 +604,9 @@ td {
   max-width: 100%;
   height: auto; }
 
-@keyframes chyron {
-  from {
-    transform: translateX(150%); }
-  to {
-    transform: translateX(-150%); } }
+.marquee {
+  display: flex; }
+
 .footer {
   width: 100%;
   position: relative;

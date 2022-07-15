@@ -27,10 +27,11 @@
 .clients__images {
     display: flex;
     align-items: center;
-    animation: chyron 10s infinite linear;
-    &:hover {
-        animation-play-state: paused;
-    }
+    width: 100%;
+    // animation: chyron 10s infinite linear;
+    // &:hover {
+    //     animation-play-state: paused;
+    // }
 }
 
 .clients__img-wrap {
@@ -44,11 +45,20 @@
     height: auto;
 }
 
-@keyframes chyron {
-  from { 
-    transform: translateX(150%); 
-}
-  to { 
-    transform: translateX(-150%); 
-    }
+// @keyframes chyron {
+//   from { 
+//     transform: translateX(150%); 
+// }
+//   to { 
+//     transform: translateX(-150%); 
+//     }
+// }
+
+// @keyframes marquee {
+//     0% { left: 0; }
+//     100% { left: -100%; }
+// }
+
+.marquee {
+    display: flex;
 }
