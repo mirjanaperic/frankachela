@@ -5,6 +5,7 @@
     "shx": "^0.3.2"
   },
   "dependencies": {
+    "gh-pages": "^4.0.0",
     "gsap": "^3.10.4"
   },
   "scripts": {
