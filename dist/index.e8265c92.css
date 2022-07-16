@@ -42,6 +42,10 @@
   outline: none;
 }
 
+.animation {
+  opacity: 0;
+}
+
 *, :after, :before {
   box-sizing: border-box;
   margin: 0;
@@ -94,20 +98,20 @@ img {
 
 .section-title {
   font-family: Blacker Pro Dis Md;
-  font-size: clamp(1.8rem, 4.2vw, 3.8rem);
+  font-size: clamp(1.8rem, 3.8vw, 3.8rem);
   font-weight: 500;
   line-height: 1.2;
 }
 
 .section-text {
   font-family: AktivGroteskLight;
-  font-size: clamp(.75rem, 1.38vw, 1.25rem);
+  font-size: clamp(.75rem, 1.25vw, 1.25rem);
   line-height: 1.7;
 }
 
 ::placeholder {
   font-family: AktivGroteskLight;
-  font-size: clamp(.75rem, 1.38vw, 1.25rem);
+  font-size: clamp(.75rem, 1.25vw, 1.25rem);
   line-height: 1.2;
 }
 
@@ -331,6 +335,12 @@ td {
   position: relative;
 }
 
+@media only screen and (max-width: 768px) {
+  .banner__img {
+    margin-top: -55%;
+  }
+}
+
 .banner__subtitle {
   letter-spacing: 3px;
   text-align: center;
@@ -400,12 +410,22 @@ td {
   line-height: 1.7;
 }
 
+@media only screen and (max-width: 767px) {
+  .about__subtitle {
+    max-width: 100%;
+  }
+}
+
 .about__img {
   margin: 60px auto;
   display: block;
 }
 
 @media only screen and (max-width: 767px) {
+  .about__img {
+    margin: 30px auto;
+  }
+
   .about__flex-part:nth-child(1) {
     order: 2;
   }
@@ -452,7 +472,6 @@ td {
 }
 
 .contact__text-inner {
-  margin-bottom: 140px;
   padding: 154px 0 134px;
 }
 
@@ -756,7 +775,7 @@ td {
 }
 
 .clients__title {
-  flex: 0 0 15%;
+  flex: 0 0 20%;
   margin-right: 100px;
   font-size: clamp(1.15rem, 2.2vw, 2rem);
 }

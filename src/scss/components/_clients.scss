@@ -25,7 +25,7 @@
 .clients__title {
     font-size: clamp(1.15rem, 2.2vw, 2rem);
     margin-right: 100px;
-    flex: 0 0 15%;
+    flex: 0 0 20%;
     @media only screen and (max-width: 767px) {
         max-width: 100%;
         flex: 0 0 100%;
@@ -76,6 +76,3 @@
 //     100% { left: -100%; }
 // }
 
-// .marquee {
-//     display: flex;
-// }

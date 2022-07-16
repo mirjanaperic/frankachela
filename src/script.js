@@ -10,7 +10,8 @@
 // import { gsap } from 'gsap/all';
 // import { gsap } from 'gsap/index';
 import gsap from "gsap";
-// gsap.registerPlugin(ScrollTrigger);
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 function Marquee(selector, speed) {
   const parentSelector = document.querySelector(selector);
@@ -36,6 +37,23 @@ function Marquee(selector, speed) {
 // window.addEventListener('load', Marquee('.marquee', 0.2));
 
 
+// loop through each "h2" element and create an animation/ScrollTrigger for each
+gsap.utils.toArray(".animation").forEach(element => {
+  gsap.to(element, {
+    opacity: 1, 
+    ease: "none",
+    scrollTrigger: {
+      trigger: element,
+      start: "center 80%",
+      end: "center 5%",
+      // markers: true,
+      // toggleActions: "play reverse play reverse"
+    }
+  })
+});
+
+
+
 // gsap.to(".banner__subtitle", {
 //     x: -1300,
 //     backgroundPosition: '1300px 0',
@@ -56,7 +74,22 @@ function Marquee(selector, speed) {
 //     }
 //   });
 
-  gsap.to(".marquee", {
+  // gsap.to(".clients__img-wrap", {
+  //   duration: 5,
+  //   ease: "none",
+  //   x: "-=500", 
+  //   modifiers: {
+  //     x: gsap.utils.unitize(x => parseFloat(x) % 500) 
+  //   },
+  //   repeat: -1
+  // });
+  
+  gsap.set(".clients__img-wrap", {
+    x: (i) => i * 50
+  });
+  
+  
+  gsap.to(".clients__img-wrap", {
     duration: 5,
     ease: "none",
     x: "-=500", //move each box 500px to right

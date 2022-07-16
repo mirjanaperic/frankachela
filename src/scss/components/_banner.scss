@@ -25,6 +25,9 @@
     object-fit: contain;
     position: relative;
     z-index: 1;
+    @media only screen and (max-width: 768px) {
+        margin-top: -55%;
+    }
 }
 
 .banner__subtitle {

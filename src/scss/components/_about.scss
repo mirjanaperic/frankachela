@@ -30,11 +30,17 @@
     line-height: 1.7;
     max-width: 75%;
     margin-bottom: 40px;
+    @media only screen and (max-width: 767px) {
+        max-width: 100%;
+    }
 }
 
 .about__img {
     display: block;
     margin: 60px auto;
+    @media only screen and (max-width: 767px) {
+        margin: 30px auto;
+    }
 }
 
 .about__flex-part {
